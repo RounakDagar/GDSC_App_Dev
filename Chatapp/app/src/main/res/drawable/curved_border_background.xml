@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color -->
+    <solid android:color="#1DFBA516" /> <!-- Yellow background color -->
+
+    <!-- Border color and thickness -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/black" /> <!-- Purple border color -->
+
+    <!-- Corner radius for the curve -->
+    <corners android:radius="@dimen/_20sdp" />
+</shape>

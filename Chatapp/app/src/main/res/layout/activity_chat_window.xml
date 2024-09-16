@@ -1,0 +1,109 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Chat_Window">
+
+    <!-- Top FrameLayout -->
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#3F51B4"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backbtn"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_8sdp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/pfp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                app:srcCompat="@drawable/profile" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/amorous"
+                android:text="TextView"
+                android:textSize="@dimen/_28sdp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- LinearLayout to hold RecyclerView and CardView -->
+    <LinearLayout
+        android:id="@+id/belowFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frameLayout3"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <!-- RecyclerView with bottom margin to avoid overlap with CardView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="99dp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollbars="vertical" /> <!-- Set the bottom margin same as CardView height -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp">
+
+            <!-- CardView with EditText at the bottom -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/sendButton"
+                app:cardCornerRadius="@dimen/_40sdp">
+
+                <EditText
+                    android:id="@+id/editTextText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:hint="Type a message..."
+                    android:inputType="text" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- ImageView to the right of CardView -->
+            <ImageView
+                android:id="@+id/sendButton"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_alignParentEnd="true"
+
+                android:contentDescription="Send Button"
+                android:padding="8dp"
+                android:src="@drawable/send" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
